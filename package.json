@@ -1,0 +1,40 @@
+{
+  "name": "anton",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "watch:tailwind": "postcss public/tailwind.css -o public/index.css -w",
+    "build:tailwind": "cross-env NODE_ENV=production postcss public/tailwind.css -o public/index.css",
+    "build": "npm run build:tailwind && rollup -c",
+    "start": "sirv public -s",
+    "serve": "serve public -p 80",
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:rollup": "rollup -c -w",
+    "dev:tailwind": "tailwindcss -o public/tail.css --minify --watch"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "concurrently": "^7.0.0",
+    "cross-env": "^7.0.3",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.8",
+    "postcss-cli": "^7.1.2",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-dev": "^2.0.3",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0"
+  },
+  "dependencies": {
+    "@rollup/plugin-alias": "^3.1.9",
+    "autoprefixer": "^10.4.2",
+    "page": "^1.11.6",
+    "prismjs": "^1.27.0",
+    "sirv-cli": "^2.0.0",
+    "svelte-awesome": "^2.4.4",
+    "tailwindcss": "^3.0.23"
+  }
+}
